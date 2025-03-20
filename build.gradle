@@ -40,7 +40,7 @@ subprojects {
         // get the name of the last tag
         def tagInfo = new ByteArrayOutputStream()
         exec {
-            commandLine 'git', 'describe', '--tags'
+            commandLine 'git', 'describe', '--tags', '--exclude', 'v*.*.*'
             standardOutput = tagInfo
         }
         tagInfo = tagInfo.toString()
